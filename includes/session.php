@@ -30,7 +30,7 @@ if (stristr($_SERVER["SCRIPT_NAME"], basename(__FILE__))!==false) {
 }
 
 //-- version of PhpGedView  (Let's keep this in an obvious place -- not buried in code)
-$VERSION = "4.1.4";
+$VERSION = "4.1.3";
 $VERSION_RELEASE = "";
 $REQUIRED_PRIVACY_VERSION = "3.1";
 
@@ -454,12 +454,7 @@ if (!$CONFIGURED) {
 ignore_user_abort(false);
 
 if (empty($CONFIG_VERSION)) $CONFIG_VERSION = "2.65";
-if (empty($SERVER_URL)) {
-	$SERVER_URL = "http://".$_SERVER["SERVER_NAME"];
-	if (!empty($_SERVER["SERVER_PORT"]) && $_SERVER["SERVER_PORT"]!=80) $SERVER_URL .= ":".$_SERVER["SERVER_PORT"];
-	$SERVER_URL .= dirname($SCRIPT_NAME)."/";
-	$SERVER_URL = stripslashes($SERVER_URL);
-}
+if (empty($SERVER_URL)) $SERVER_URL = stripslashes("http://".$_SERVER["SERVER_NAME"].dirname($SCRIPT_NAME)."/");
 if (substr($SERVER_URL,-1)!="/") $SERVER_URL .= "/";	// make SURE that trailing "/" is present
 if (!isset($ALLOW_REMEMBER_ME)) $ALLOW_REMEMBER_ME = true;
 if (!isset($PGV_SIMPLE_MAIL)) $PGV_SIMPLE_MAIL = false;

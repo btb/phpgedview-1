@@ -314,7 +314,6 @@ if ($action=="ImportFile") {
 	
 	$placefiles = array();
 	findFiles("modules/googlemap/extra");
-	sort($placefiles);
 ?>
 <form method="post" enctype="multipart/form-data" id="importfile" name="importfile" action="module.php?mod=googlemap&pgvaction=places">
 	<input type="hidden" name="action" value="ImportFile2" />
