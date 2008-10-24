@@ -1,3 +1,0 @@
-# $Id: .htaccess 552 2006-11-02 21:58:56Z yalnifj $
-order allow,deny
-deny from all
