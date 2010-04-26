@@ -1137,6 +1137,7 @@ class XmlGedcom {
 		$name->setVersion($attrs["VERSION"]);
 		if (!empty($attrs["TYPE"]))
 		$name->setType($attrs["TYPE"]);
+		$name->setPerson($person);
 		$person->addAssertion($name);
 		array_pop($this->tagStack);
 		$this->tagStack[] = $person;

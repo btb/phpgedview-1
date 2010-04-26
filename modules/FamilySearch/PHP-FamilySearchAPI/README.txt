@@ -1,8 +1,8 @@
 =======================================================
     PHP FamilySearch API XML Parser Library
 
-    Version 0.92
-    Copyright (C) 2007 Neumont University
+    Version 1.0
+    Copyright (C) 2010 Neumont University
 
 =======================================================
 

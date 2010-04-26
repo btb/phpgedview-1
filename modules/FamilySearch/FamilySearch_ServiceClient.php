@@ -37,7 +37,7 @@ class FamilySearch_ServiceClient extends ServiceClient {
 	 */
 	function FamilySearch_ServiceClient($gedrec){
 
-		parent::ServiceClient($gedrec);
+		parent::__construct($gedrec);
 
 		//get info from the gedcom record
 		$this->url = get_gedcom_value("URL",1,$gedrec);
@@ -286,7 +286,7 @@ class FamilySearch_ServiceClient extends ServiceClient {
 			$result = $this->xmlGed->getGedcomRecord($xref);
 			
 			//print_r($result);
-			if (PEAR::isError($result) || isset($result->faultcode) || get_class($result)=='SOAP_Fault' || is_object($result)) {
+			if (PEAR::isError($result) || isset($result->faultcode) || is_object($result)) {
 				if (isset($result->faultstring)) {
 					AddToLog($result->faultstring);
 					print $result->faultstring;
